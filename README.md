@@ -8,7 +8,7 @@ A lightweight, Go-based CLI TODO manager designed for local AI workflows — wit
 - 🔔 **Multi-channel Notifications** — ntfy push notifications + generic webhook postback
 - 📦 **SQLite Storage** — No external database needed, everything stored in `~/.local/share/todo/todo.db`
 - 🎨 **Pretty Output** — Color-coded priorities and statuses with table formatting
-- 🤖 **AI-Agent Ready** — Structured CLI output, simple commands, and an included agent skill make it a perfect tool for AI-driven workflows
+- 🤖 **AI-Agent Ready** — Structured CLI output, simple commands, and a pre-defined agent skill (`@skills/todo/SKILL.md`) make it a perfect tool for AI-driven workflows
 - 🐳 **Docker Support** — Run the daemon as a container with shared SQLite volume
 - 🚀 **Single Binary** — Pure Go, no CGO, compiles to a single binary
 
@@ -20,7 +20,7 @@ A lightweight, Go-based CLI TODO manager designed for local AI workflows — wit
 - **Simple CRUD interface** — `add`, `list`, `show`, `edit`, `done`, `delete` — no ambiguity
 - **Filterable output** — Agents can query by status (`-s pending`) or priority (`-p high`) to focus on what matters
 - **Notification daemon** — Set it and forget it; the daemon handles alerting humans while agents manage the task lifecycle
-- **Included Agent Skill** — The `todo-manager/SKILL.md` teaches any compatible agent how to use `todo` expertly, including natural date parsing, priority inference, and multi-step workflows
+- **Included Agent Skill** — The `@skills/todo/SKILL.md` teaches any compatible agent how to use `todo` expertly, including natural date parsing, priority inference, and multi-step workflows
 - **Webhook integration** — The postback channel lets agents create tasks that notify external systems (Slack bots, CI pipelines, dashboards) when due
 
 **Example AI workflow:**
@@ -31,7 +31,13 @@ Agent: todo add "Review PR" -p high -D "2026-03-06 09:00"
        → Postback hits your Slack bot with the reminder
 ```
 
-Drop `todo-manager/` into your agent's skills directory and it just works.
+Drop `@skills/todo/` into your agent's skills directory and it just works.
+
+**Install via [vercel-labs/skills](https://github.com/vercel-labs/skills):**
+```bash
+# Install the todo skill into your agent's skills directory
+npx @vercel-labs/skills add https://github.com/vividvilla/todo.git/skills
+```
 
 ## Installation
 
