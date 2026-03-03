@@ -45,8 +45,8 @@ npx @vercel-labs/skills add https://github.com/vividvilla/todo.git/skills
 
 ```bash
 # Clone the repository
-git clone https://github.com/vivek/todod.git
-cd todod
+git clone https://github.com/vividvilla/todo.git
+cd todo
 
 # Build
 go build -o todo .
