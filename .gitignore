@@ -1,0 +1,21 @@
+# Binary
+todo
+
+# Test & coverage
+coverage.out
+coverage.html
+
+# Database & runtime
+*.db
+*.pid
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Go
+vendor/

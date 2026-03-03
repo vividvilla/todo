@@ -1,0 +1,13 @@
+services:
+  todo-daemon:
+    build: .
+    container_name: todo-daemon
+    restart: unless-stopped
+    command: ["daemon", "-i", "60"]
+    volumes:
+      # Share the SQLite DB between host CLI and container daemon
+      - ${TODO_DATA:-~/.local/share/todo}:/home/todo/.local/share/todo
+    environment:
+      - TZ=${TZ:-Asia/Kolkata}
+    # Uncomment to override the check interval
+    # command: ["daemon", "-i", "30"]
