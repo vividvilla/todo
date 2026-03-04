@@ -8,6 +8,9 @@ import (
 	"github.com/vivek/todod/db"
 )
 
+// Version is set at build time via -ldflags.
+var Version = "dev"
+
 var rootCmd = &cobra.Command{
 	Use:   "todo",
 	Short: "A CLI TODO tracker with notification daemon",
